@@ -21,6 +21,15 @@ public:
 //         tail = NULL;
 //     }
 // };
+int lenght(node*head){
+    int len=0;
+    while(head!=NULL){
+        head = head->next;
+        len++;
+    }
+    return len;
+}
+
 
 void insertAtHead(node*&head, int data){
     node*n = new node(data);
