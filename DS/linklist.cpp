@@ -68,6 +68,52 @@ void insertAtMiddle(node*&head, int data, int pos){
         temp->next = n;
     }
 }
+
+void deleteAtHead(node*&head) {
+    if(head==NULL){
+        return;
+    }
+    node*temp = head;
+    head = head->next;
+    delete temp;
+    return
+}
+
+void deleteAtTail(node*head) {
+    if(head==NULL){
+   node*pre = NULL;
+   node*temp = head;
+   while(temp->next!=NULL){
+       prev = temp;
+       temp = temp->next;
+   }
+    delete temp;
+    pre->next = NULL;
+    return;
+}
+
+void deleteAtMid(node*head, int pos){
+    if(head==NULL){
+        return;
+    } else{
+        node*temp = head;
+        node*pre = NULL;
+        if(pos == 1){
+            delete next;
+        } else if( pos> lenght(head)){
+            deleteAtTail(head);
+        } else {
+            int jump=0;
+            while(jump<=pos-1){
+                temp = temp->next;
+                pre = temp;
+            }
+            pre = temp->next;
+            delete temp;
+        }
+    }
+}
+
 // void insertAtTail(node*&head,int data){
 //     node*prv = head;
      
