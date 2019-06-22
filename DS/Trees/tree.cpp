@@ -29,22 +29,50 @@ node* buildTree(){
     return root;
 }
 
-void print(node *a){
+void proprint(node *a){
     if(a==NULL){
         return;
     }
     else {
         cout << a->data;
-        print(a->left);
-        print(a->right);
+        proprint(a->left);
+        proprint(a->right);
+    }
+}
+
+void ioprint(node *a){
+    if(a==NULL){
+        return;
+    }
+    else {
+        ioprint(a->left);
+        cout << a->data;
+        ioprint(a->right);
+    }
+}
+
+void pooprint(node *a){
+    if(a==NULL){
+        return;
+    }
+    else {
+        pooprint(a->left);
+        pooprint(a->right);
+        cout << a->data;
     }
 }
 
 int main(){
     node *root = buildTree(); 
     cout << "Tree building done, now we can print tree" << endl;
+    cout << " printing in pre-order -  ";
+    proprint(root);
+    cout << endl;
     cout << " printing in inorder -  ";
-    print(root);
+    ioprint(root);
+    cout << endl;
+    cout << " printing in post-order -  ";
+    pooprint(root);
     cout << endl;
     return 0;
 }
