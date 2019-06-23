@@ -62,6 +62,28 @@ void pooprint(node *a){
     }
 }
 
+int height(node*root){
+    if(root=0){
+        return 0;
+    }
+    int ls=height(root->left);
+    int rs=height(root->right);
+    return max(ls, rs)+1;
+}
+
+void printKthLevel(node*root, int k){
+    if(root==NULL){
+        return;
+    }
+    if(k==1){
+        cout << root->data << " ";
+        return;
+    }
+    printKthLevel(root->left, k-1);
+    printKthLevel(root->right, k-1);
+    return;
+}
+
 int main(){
     node *root = buildTree(); 
     cout << "Tree building done, now we can print tree" << endl;
@@ -74,5 +96,7 @@ int main(){
     cout << " printing in post-order -  ";
     pooprint(root);
     cout << endl;
+
+    printKthLevel(root, 4);
     return 0;
 }
