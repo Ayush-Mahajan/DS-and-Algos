@@ -29,9 +29,7 @@ node* buildTree(){
     return root;
 }
 
-
 // Pre Order, In Order, and Post Order printing
-
 void proprint(node *a){
     if(a==NULL){
         return;
@@ -89,6 +87,14 @@ void printKthLevel(node*root, int k){
     return;
 }
 
+void levelOrderPrint(node*root){
+    int i;
+    for(i=1 ; i<=height(root); i++){
+        printKthLevel(root, i);
+        cout << endl;
+    }
+}
+
 int main(){
     node *root = buildTree(); 
     cout << "Tree building done, now we can print tree" << endl;
@@ -103,5 +109,8 @@ int main(){
     cout << endl;
 
     printKthLevel(root, 4);
+
+    cout << endl << "printing level order" << endl;
+    levelOrderPrint(root);
     return 0;
 }
