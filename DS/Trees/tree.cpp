@@ -87,30 +87,38 @@ void printKthLevel(node*root, int k){
     return;
 }
 
-void levelOrderPrint(node*root){
-    int i;
-    for(i=1 ; i<=height(root); i++){
-        printKthLevel(root, i);
+void levelOrderPrint(node *temp){
+    cout << "---";
+    int i, h = height(temp);
+    cout << "Enter the function";
+    for(i=1 ; i<=h; i++){
+        printKthLevel(temp, i);
         cout << endl;
     }
+    return;
 }
 
 int main(){
     node *root = buildTree(); 
+    node *temp = root;
     cout << "Tree building done, now we can print tree" << endl;
-    cout << " printing in pre-order -  ";
-    proprint(root);
-    cout << endl;
-    cout << " printing in inorder -  ";
-    ioprint(root);
-    cout << endl;
-    cout << " printing in post-order -  ";
-    pooprint(root);
-    cout << endl;
+    // cout << " printing in pre-order -  ";
+    // proprint(root);
+    // cout << endl;
+    // cout << " printing in inorder -  ";
+    // ioprint(root);
+    // cout << endl;
+    // cout << " printing in post-order -  ";
+    // pooprint(root);
+    // cout << endl;
 
-    printKthLevel(root, 4);
+    printKthLevel(root, 1);
+    cout << endl;
+    printKthLevel(root, 2);
+    cout << endl;
+    printKthLevel(root, 3);
 
     cout << endl << "printing level order" << endl;
-    levelOrderPrint(root);
+    levelOrderPrint(temp);
     return 0;
 }
