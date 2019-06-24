@@ -29,6 +29,9 @@ node* buildTree(){
     return root;
 }
 
+
+// Pre Order, In Order, and Post Order printing
+
 void proprint(node *a){
     if(a==NULL){
         return;
@@ -62,6 +65,8 @@ void pooprint(node *a){
     }
 }
 
+
+// Level Order Printing of tree
 int height(node*root){
     if(root=0){
         return 0;
