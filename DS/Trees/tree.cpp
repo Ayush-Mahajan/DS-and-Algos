@@ -66,7 +66,7 @@ void pooprint(node *a){
 
 // Level Order Printing of tree
 int height(node*root){
-    if(root=0){
+    if(root==0){
         return 0;
     }
     int ls=height(root->left);
@@ -91,7 +91,7 @@ void levelOrderPrint(node *temp){
     cout << "---";
     int i, h = height(temp);
     cout << "Enter the function";
-    for(i=1 ; i<=h; i++){
+    for(i=0 ; i<=h; i++){
         printKthLevel(temp, i);
         cout << endl;
     }
@@ -106,7 +106,7 @@ int main(){
     // proprint(root);
     // cout << endl;
     // cout << " printing in inorder -  ";
-    // ioprint(root);
+    // ioprint(root);execvp
     // cout << endl;
     // cout << " printing in post-order -  ";
     // pooprint(root);
