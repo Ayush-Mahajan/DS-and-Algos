@@ -1,4 +1,6 @@
 #include <iostream>
+#include <queue>
+
 
 using namespace::std;
 
@@ -98,6 +100,28 @@ void levelOrderPrint(node *temp){
     return;
 }
 
+// Breath First Search
+void bfs(node *root){
+    queue<node*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        node *f = q.front();
+        cout << f->data << ", ";
+        q.pop();
+
+        if(f->left){
+            q.push(f->left);
+        }
+        if(f->right){
+            q.push(f->right);
+        }
+    }
+
+    return;
+}
+
+
 int main(){
     node *root = buildTree(); 
     node *temp = root;
@@ -112,13 +136,16 @@ int main(){
     // pooprint(root);
     // cout << endl;
 
-    printKthLevel(root, 1);
-    cout << endl;
-    printKthLevel(root, 2);
-    cout << endl;
-    printKthLevel(root, 3);
+    // printKthLevel(root, 1);
+    // cout << endl;
+    // printKthLevel(root, 2);
+    // cout << endl;
+    // printKthLevel(root, 3);
 
-    cout << endl << "printing level order" << endl;
-    levelOrderPrint(temp);
+    // cout << endl << "printing level order" << endl;
+    // levelOrderPrint(temp);
+    
+    bfs(root);
+    
     return 0;
 }
