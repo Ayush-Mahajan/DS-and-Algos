@@ -121,6 +121,20 @@ void bfs(node *root){
     return;
 }
 
+int diameter(node*root){
+    if(root==NULL){
+        return 0;
+    }
+    
+    int h1 = height(root->left);
+    int h2 = height(root->right);
+    int opt1 = h1+h2;
+    int opt2 = diameter(root->left);
+    int opt3 = diameter(root->right);
+
+    return max(opt1, max(opt2,  opt3));
+}
+
 
 int main(){
     node *root = buildTree(); 
