@@ -161,5 +161,7 @@ int main(){
     
     bfs(root);
     
+    cout << diameter(root);
+
     return 0;
 }
