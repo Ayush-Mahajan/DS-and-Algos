@@ -43,6 +43,22 @@ int stack::pop(){
     }
 }
 
+int stack::peek(){
+    if(top==-1){
+        cout << "stack empty";
+        return 0;
+    } else {
+        int x = a[top];
+        return x;
+    }
+}
+
+bool stack::isEmpty(){
+    if(top < 0) {
+        return 1;
+    }
+}
+
 int main()
 {
 
