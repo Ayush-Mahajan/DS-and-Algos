@@ -61,5 +61,10 @@ bool stack::isEmpty(){
 
 int main()
 {
-
+    class stack s;
+    s.push(10);
+    s.push(20);
+    s.push(40);
+    s.pop();
+    s.push(30);
 }
