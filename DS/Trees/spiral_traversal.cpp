@@ -38,7 +38,32 @@ int height(node *root){
     return max(ls, rs)+1;
 }
 
+void printGivenLevel(node* root, int level, int ltr){
+    if(root==NULL){
+        return;
+    }
+
+    if(level == 1){
+        cout << root->data;
+    }
+    if(ltr){
+        printGivenLevel(root->left, level-1, ltr);
+        printGivenLevel(root->right, level-1, ltr);
+    }
+    else{
+        printGivenLevel(root->right, level-1, ltr);
+        printGivenLevel(root->left, level-1, ltr);
+    }
+}
+
 void printSpiral(node * root){
     int h = height(root);
+    int i;
 
+    bool ltr = false;
+    for(i=0; i<=h ; i++){
+        printGivenLevel(root, i, ltr);
+
+        ltr = !ltr;
+    }
 }
