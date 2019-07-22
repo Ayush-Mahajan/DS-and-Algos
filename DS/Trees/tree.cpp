@@ -68,7 +68,7 @@ void pooprint(node *a){
 
 // Level Order Printing of tree
 int height(node*root){
-    if(root==0){
+    if(root==NULL){
         return 0;
     }
     int ls=height(root->left);
