@@ -38,7 +38,7 @@ int height(node *root){
     return max(ls, rs)+1;
 }
 
-void printGivenLevel(node* root, int level, int ltr){
+void printGivenLevelIterative(node* root, int level, int ltr){
     if(root==NULL){
         return;
     }
@@ -47,12 +47,12 @@ void printGivenLevel(node* root, int level, int ltr){
         cout << root->data;
     }
     if(ltr){
-        printGivenLevel(root->left, level-1, ltr);
-        printGivenLevel(root->right, level-1, ltr);
+        printGivenLevelIterative(root->left, level-1, ltr);
+        printGivenLevelIterative(root->right, level-1, ltr);
     }
     else{
-        printGivenLevel(root->right, level-1, ltr);
-        printGivenLevel(root->left, level-1, ltr);
+        printGivenLevelIterative(root->right, level-1, ltr);
+        printGivenLevelIterative(root->left, level-1, ltr);
     }
 }
 
@@ -62,8 +62,16 @@ void printSpiral(node * root){
 
     bool ltr = false;
     for(i=0; i<=h ; i++){
-        printGivenLevel(root, i, ltr);
+        printGivenLevelIterative(root, i, ltr);
 
         ltr = !ltr;
     }
+}
+
+int main(){
+
+    node *root = buildTree();
+    node *temp = root;
+    printSpiral(root);
+    return 0;
 }
