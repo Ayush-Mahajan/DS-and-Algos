@@ -14,6 +14,9 @@ long f(long n){
     if(n%2==0) {
         return F[n] = (f(k)*f(k)+ f(k-1)*f(k-1))%M;
     }
+    else{
+        return F[n] = (f(k)*f(k+1) + f(k-1)*f(k))%M;
+    }
 }
 
 int main(){
