@@ -20,5 +20,8 @@ long f(long n){
 }
 
 int main(){
-
+    long n;
+    F[0]=F[1] = 1;
+    while (cin >> n)
+        cout << (n==0? 0: f(n-1)) << endl;
 }
