@@ -10,7 +10,7 @@ int main(){
 
     cout << v[1] << v[3] << endl;
 
-    sort(v.being(), v.end());
+    sort(v.begin(), v.end());
 
     bool present = binary_search(v.begin(), v.end(), 3);
 
