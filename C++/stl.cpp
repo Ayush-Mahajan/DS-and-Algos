@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 #include <set>
+#include <map>
+
 
 using namespace::std;
 
@@ -28,12 +30,35 @@ void vectorDemo(){
 
 void setDemo(){
     set<int> s;
+    s.insert(-10);
+    s.insert(-1);
+    s.insert(1);
+    s.insert(1);
+    s.insert(5);
 
+    for(int x: s){
+        cout << x << " ";
+    }
+}
+
+void mapDemo(){
+    map<int, int> a;
+
+    a[1] = 100;
+    a[2] = -1;
+    a[3] = 200;
+
+    map<char, int> cnt;
+    string x = "Rachit Jain";
+    for(char c: x){
+        cout << c << " ";
+        cnt[c]++;
+    }
 }
 
 int main(){
 
-    
+    setDemo();
 
     return 0;
 }
